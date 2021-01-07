@@ -18,7 +18,7 @@ class _CustomDropDownBoxState extends State<CustomDropDownBox> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 63,
+      height: 60,
       width: 155,
       child: Container(
         decoration: ShapeDecoration(

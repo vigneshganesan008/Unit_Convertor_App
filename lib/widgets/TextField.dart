@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(top: 16.0, bottom: 0, left: 8, right: 8),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * .5,
         child: TextField(
@@ -34,6 +34,7 @@ class CustomTextField extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontSize: 20),
           onChanged: (_) => calculate(),
           keyboardAppearance: Brightness.dark,
+          maxLength: 10,
         ),
       ),
     );

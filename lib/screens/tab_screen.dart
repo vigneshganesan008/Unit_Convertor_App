@@ -1,4 +1,5 @@
 import 'package:Unit_Convertor/screens/distance_screen.dart';
+import 'package:Unit_Convertor/screens/number_screen.dart';
 import 'package:Unit_Convertor/screens/temperature_screen.dart';
 import 'package:Unit_Convertor/screens/time_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _TabScreenState extends State<TabScreen> {
       {"screen": TemperatureScreen(), "title": Text("Temperature Convertor")},
       {"screen": DistanceScreen(), "title": Text("Currency Convertor")},
       {"screen": TimeScreen(), "title": Text("Time Convertor")},
-      {"screen": DistanceScreen(), "title": Text("Number Convertor")},
+      {"screen": NumberScreen(), "title": Text("Number Convertor")},
     ];
     super.initState();
   }

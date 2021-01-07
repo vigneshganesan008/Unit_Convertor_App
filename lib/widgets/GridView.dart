@@ -32,11 +32,19 @@ class CustomGridView extends StatelessWidget {
             "$unit",
             style: TextStyle(color: Colors.white, fontSize: 25),
           ),
-          Flexible(
-            fit: FlexFit.loose,
-            child: Text(
-              value.toStringAsFixed(2),
-              style: TextStyle(color: Colors.white, fontSize: 25),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: FittedBox(
+              fit: BoxFit.fitWidth,
+              child: value is String
+                  ? Text(
+                      value,
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    )
+                  : Text(
+                      value.toStringAsFixed(2),
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
             ),
           )
         ],
