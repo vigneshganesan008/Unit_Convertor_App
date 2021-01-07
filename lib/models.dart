@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:international_system_of_units/international_system_of_units.dart';
 
-var currentUnits = [LengthUnit.inch];
+var currentUnits = [LengthUnit.inch, TemperatureUnit.celsius];
 void updateCurrentUnit(converterType, newValue) {
-  currentUnits[0] = newValue;
+  currentUnits[converterType] = newValue;
 }
 
 List distanceUnits = [
@@ -15,6 +15,12 @@ List distanceUnits = [
   LengthUnit.centimeter,
   LengthUnit.meter,
   LengthUnit.kilometer,
+];
+
+List tempUnits = [
+  TemperatureUnit.celsius,
+  TemperatureUnit.fahrenheit,
+  TemperatureUnit.kelvin,
 ];
 
 List<Map<String, Object>> measures = [
