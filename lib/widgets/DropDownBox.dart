@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Unit_Convertor/models.dart';
+import 'package:international_system_of_units/international_system_of_units.dart';
 
 // ignore: must_be_immutable
 class CustomDropDownBox extends StatefulWidget {
@@ -46,7 +47,9 @@ class _CustomDropDownBoxState extends State<CustomDropDownBox> {
             items: widget.items
                 .map(
                   (e) => DropdownMenuItem(
-                    child: Text(e.toString().split(".")[1]),
+                    child: e == TimeUnit.calendarYear
+                        ? Text("year")
+                        : Text(e.toString().split(".")[1]),
                     value: e,
                   ),
                 )

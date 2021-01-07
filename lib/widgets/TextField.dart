@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
-  String hintText;
   TextEditingController controller;
   Function calculate;
-  CustomTextField(this.hintText, this.controller, this.calculate);
+  CustomTextField(this.controller, this.calculate);
   @override
   Widget build(BuildContext context) {
     return Padding(

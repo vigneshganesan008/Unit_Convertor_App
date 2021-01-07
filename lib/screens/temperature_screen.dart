@@ -41,7 +41,7 @@ class _TemperatureScreenState extends State<TemperatureScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomTextField("Enter Value", inputTemp, () {
+              CustomTextField(inputTemp, () {
                 setState(() {});
               }),
               CustomDropDownBox(tempUnits, 1, () {

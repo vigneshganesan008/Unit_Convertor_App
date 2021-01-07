@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:international_system_of_units/international_system_of_units.dart';
 
-var currentUnits = [LengthUnit.inch, TemperatureUnit.celsius];
+var currentUnits = [LengthUnit.inch, TemperatureUnit.celsius, TimeUnit.second];
 void updateCurrentUnit(converterType, newValue) {
   currentUnits[converterType] = newValue;
 }
@@ -21,6 +21,16 @@ List tempUnits = [
   TemperatureUnit.celsius,
   TemperatureUnit.fahrenheit,
   TemperatureUnit.kelvin,
+];
+
+List timeUnits = [
+  TimeUnit.second,
+  TimeUnit.minute,
+  TimeUnit.hour,
+  TimeUnit.day,
+  TimeUnit.week,
+  TimeUnit.month,
+  TimeUnit.calendarYear,
 ];
 
 List<Map<String, Object>> measures = [

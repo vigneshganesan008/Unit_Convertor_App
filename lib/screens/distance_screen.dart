@@ -52,7 +52,7 @@ class _DistanceScreenState extends State<DistanceScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomTextField("Enter Value", inputDistance, () {
+              CustomTextField(inputDistance, () {
                 setState(() {});
               }),
               CustomDropDownBox(distanceUnits, 0, () {
