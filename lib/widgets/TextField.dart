@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   String hintText;
   TextEditingController controller;
-
-  CustomTextField(this.hintText, this.controller);
-
+  Function calculate;
+  CustomTextField(this.hintText, this.controller, this.calculate);
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        width: 250,
+        width: MediaQuery.of(context).size.width * .6,
         child: TextField(
           decoration: InputDecoration(
               hintStyle: TextStyle(color: Colors.tealAccent),
@@ -30,6 +29,8 @@ class CustomTextField extends StatelessWidget {
           controller: controller,
           keyboardType: TextInputType.number,
           style: TextStyle(color: Colors.white),
+          onChanged: (_) => calculate(),
+          keyboardAppearance: Brightness.dark,
         ),
       ),
     );

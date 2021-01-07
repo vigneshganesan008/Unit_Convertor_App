@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomGridView extends StatelessWidget {
   List<Map<String, Object>> unitValue;
   CustomGridView(this.unitValue);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 200,
+    return Expanded(
       child: GridView(
         padding: EdgeInsets.all(8),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -32,9 +32,12 @@ class CustomGridView extends StatelessWidget {
             "$unit",
             style: TextStyle(color: Colors.white, fontSize: 25),
           ),
-          Text(
-            "$value",
-            style: TextStyle(color: Colors.white, fontSize: 25),
+          Flexible(
+            fit: FlexFit.loose,
+            child: Text(
+              value.toStringAsFixed(2),
+              style: TextStyle(color: Colors.white, fontSize: 25),
+            ),
           )
         ],
       ),
