@@ -46,17 +46,20 @@ class _DistanceScreenState extends State<DistanceScreen> {
 
     return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
       Container(
-        height: (mediaQuery.size.height - mediaQuery.padding.top) * 0.1,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            CustomTextField("Enter Value", inputDistance, () {
-              setState(() {});
-            }),
-            CustomDropDownBox(distanceUnits, 0, () {
-              setState(() {});
-            })
-          ],
+        height: (mediaQuery.size.height - mediaQuery.padding.top) * 0.15,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomTextField("Enter Value", inputDistance, () {
+                setState(() {});
+              }),
+              CustomDropDownBox(distanceUnits, 0, () {
+                setState(() {});
+              })
+            ],
+          ),
         ),
       ),
       CustomGridView(calculateDistance()),

@@ -16,41 +16,49 @@ class CustomDropDownBox extends StatefulWidget {
 class _CustomDropDownBoxState extends State<CustomDropDownBox> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 17, left: 5),
-      child: DropdownButton(
-        value: currentUnits[widget.convertorType],
-        hint: Text(
-          "Unit",
-          style: TextStyle(
-            color: Colors.tealAccent,
+    return SizedBox(
+      height: 63,
+      width: 155,
+      child: Container(
+        decoration: ShapeDecoration(
+          shape: RoundedRectangleBorder(
+            side: BorderSide(
+                width: 1.0, style: BorderStyle.solid, color: Colors.tealAccent),
+            borderRadius: BorderRadius.all(Radius.circular(100)),
           ),
         ),
-        icon: Icon(
-          Icons.arrow_downward,
-          color: Colors.deepPurple,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20, top: 7),
+          child: DropdownButton(
+            underline: Container(),
+            value: currentUnits[widget.convertorType],
+            icon: Icon(
+              Icons.arrow_downward,
+              color: Colors.yellow,
+            ),
+            iconSize: 35,
+            elevation: 20,
+            dropdownColor: Colors.black87,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+            ),
+            items: widget.items
+                .map(
+                  (e) => DropdownMenuItem(
+                    child: Text(e.toString().split(".")[1]),
+                    value: e,
+                  ),
+                )
+                .toList(),
+            onChanged: (newValue) {
+              setState(() {
+                updateCurrentUnit(widget.convertorType, newValue);
+                widget.calculate();
+              });
+            },
+          ),
         ),
-        iconSize: 35,
-        elevation: 20,
-        style: TextStyle(color: Colors.deepPurple, fontSize: 18),
-        underline: Container(
-          height: 3,
-          color: Colors.deepPurpleAccent,
-        ),
-        items: widget.items
-            .map(
-              (e) => DropdownMenuItem(
-                child: Text(e.toString().split(".")[1]),
-                value: e,
-              ),
-            )
-            .toList(),
-        onChanged: (newValue) {
-          setState(() {
-            updateCurrentUnit(widget.convertorType, newValue);
-            widget.calculate();
-          });
-        },
       ),
     );
   }

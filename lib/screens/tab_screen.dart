@@ -54,7 +54,7 @@ class _TabScreenState extends State<TabScreen> {
       type: BottomNavigationBarType.fixed,
       backgroundColor: Color.fromRGBO(50, 50, 50, 1),
       elevation: 5,
-      selectedItemColor: Color.fromRGBO(181, 126, 220, 1),
+      selectedItemColor: Colors.blue,
       unselectedItemColor: Colors.tealAccent,
       currentIndex: selectedPageIndex,
       onTap: selectPage,

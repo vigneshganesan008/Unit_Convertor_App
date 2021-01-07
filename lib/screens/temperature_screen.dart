@@ -35,17 +35,20 @@ class _TemperatureScreenState extends State<TemperatureScreen> {
 
     return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
       Container(
-        height: (mediaQuery.size.height - mediaQuery.padding.top) * 0.1,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            CustomTextField("Enter Value", inputTemp, () {
-              setState(() {});
-            }),
-            CustomDropDownBox(tempUnits, 1, () {
-              setState(() {});
-            })
-          ],
+        height: (mediaQuery.size.height - mediaQuery.padding.top) * 0.15,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomTextField("Enter Value", inputTemp, () {
+                setState(() {});
+              }),
+              CustomDropDownBox(tempUnits, 1, () {
+                setState(() {});
+              })
+            ],
+          ),
         ),
       ),
       CustomGridView(calculateTemp()),
