@@ -3,7 +3,17 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 List<Map<String, Object>> exchangeRates = [
-  {"values": "NULL", "rate": 0}
+  {"currency": "INR", "rate": 0.0},
+  {"currency": "EUR", "rate": 0.0},
+  {"currency": "USD", "rate": 0.0},
+  {"currency": "JPY", "rate": 0.0},
+  {"currency": "GBP", "rate": 0.0},
+  {"currency": "AUD", "rate": 0.0},
+  {"currency": "MXN", "rate": 0.0},
+  {"currency": "KWD", "rate": 0.0},
+  {"currency": "SGD", "rate": 0.0},
+  {"currency": "MYR", "rate": 0.0},
+  {"currency": "AED", "rate": 0.0},
 ];
 
 Future<void> getCurrentExchangeRates() async {

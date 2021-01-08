@@ -18,6 +18,16 @@ class _NumberScreenState extends State<NumberScreen> {
         (base != 16 && (int.tryParse(inputNumber.text) == null))) {
       inputNumber.text = "0";
     }
+    var flag = false;
+    if (base == 2) {
+      inputNumber.text.split("").forEach((element) {
+        if (element == "0" || element == "1") {
+        } else {
+          flag = true;
+        }
+      });
+    }
+    if (flag) inputNumber.text = "0";
     return [
       {
         "unit": "Binary",
