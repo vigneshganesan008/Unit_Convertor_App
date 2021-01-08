@@ -1,3 +1,4 @@
+import 'package:Unit_Convertor/screens/currency_screen.dart';
 import 'package:Unit_Convertor/screens/distance_screen.dart';
 import 'package:Unit_Convertor/screens/number_screen.dart';
 import 'package:Unit_Convertor/screens/temperature_screen.dart';
@@ -19,14 +20,14 @@ class _TabScreenState extends State<TabScreen> {
     screens = [
       {"screen": DistanceScreen(), "title": Text("Distance Convertor")},
       {"screen": TemperatureScreen(), "title": Text("Temperature Convertor")},
-      {"screen": DistanceScreen(), "title": Text("Currency Convertor")},
+      {"screen": CurrencyScreen(), "title": Text("Currency Convertor")},
       {"screen": TimeScreen(), "title": Text("Time Convertor")},
       {"screen": NumberScreen(), "title": Text("Number Convertor")},
     ];
     super.initState();
   }
 
-  var selectedPageIndex = 0;
+  var selectedPageIndex = 2;
   void selectPage(int index) {
     setState(() {
       selectedPageIndex = index;

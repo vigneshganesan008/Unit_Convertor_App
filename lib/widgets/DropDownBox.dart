@@ -54,7 +54,9 @@ class _CustomDropDownBoxState extends State<CustomDropDownBox> {
                     (e) => DropdownMenuItem(
                       child: e == TimeUnit.calendarYear
                           ? Text("year")
-                          : Text(e.toString().split(".")[1]),
+                          : e.toString().length == 3
+                              ? Text(e)
+                              : Text(e.toString().split(".")[1]),
                       value: e,
                     ),
                   )

@@ -1,14 +1,19 @@
+import 'package:flutter_currency_converter/Currency.dart';
 import 'package:international_system_of_units/international_system_of_units.dart';
 
 var currentUnits = [
   LengthUnit.inch,
   TemperatureUnit.celsius,
   TimeUnit.second,
-  "NumberUnits.2"
+  "NumberUnit.2",
+  Currency.INR,
 ];
+
 void updateCurrentUnit(converterType, newValue) {
   currentUnits[converterType] = newValue;
 }
+
+var unitRateinUSD = 0.0;
 
 List distanceUnits = [
   LengthUnit.inch,
@@ -38,20 +43,25 @@ List timeUnits = [
 ];
 
 List numberUnits = [
-  "NumberUnits.2",
-  "NumberUnits.5",
-  "NumberUnits.8",
-  "NumberUnits.10",
-  "NumberUnits.16"
+  "NumberUnit.2",
+  "NumberUnit.5",
+  "NumberUnit.8",
+  "NumberUnit.10",
+  "NumberUnit.16"
 ];
-
-// List<Map<String, Object>> measures = [
-//   {"label": "Distance", "icon": Icons.directions_car},
-//   {"label": "Temp", "icon": Icons.thermostat_rounded},
-//   {"label": "Currency", "icon": Icons.euro},
-//   {"label": "Time", "icon": Icons.timer},
-//   {"label": "Number", "icon": Icons.confirmation_number},
-// ];
+List currencyUnits = [
+  Currency.INR,
+  Currency.EUR,
+  Currency.USD,
+  Currency.JPY,
+  Currency.GBP,
+  Currency.AUD,
+  Currency.MXN,
+  'KWD',
+  Currency.SGD,
+  Currency.MYR,
+  Currency.AED,
+];
 
 List<Map<String, Object>> measures = [
   {"label": "Distance", "icon": "assets/icons/distance.png"},
