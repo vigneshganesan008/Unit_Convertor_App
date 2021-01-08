@@ -12,7 +12,7 @@ class CustomGridView extends StatelessWidget {
         padding: EdgeInsets.all(10),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
-          childAspectRatio: 3 / 2,
+          childAspectRatio: 4 / 2,
           crossAxisSpacing: 20,
           mainAxisSpacing: 15,
         ),

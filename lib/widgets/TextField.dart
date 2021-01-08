@@ -21,11 +21,11 @@ class CustomTextField extends StatelessWidget {
               enabledBorder: OutlineInputBorder(
                   borderRadius:
                       const BorderRadius.all(const Radius.circular(100)),
-                  borderSide: BorderSide(color: Colors.tealAccent)),
+                  borderSide: BorderSide(color: Colors.deepPurpleAccent)),
               focusedBorder: OutlineInputBorder(
                   borderRadius:
                       const BorderRadius.all(const Radius.circular(100)),
-                  borderSide: BorderSide(color: Colors.tealAccent, width: 5))),
+                  borderSide: BorderSide(color: Colors.deepPurple, width: 5))),
           cursorColor: Colors.tealAccent,
           cursorWidth: 4,
           cursorRadius: Radius.circular(10),

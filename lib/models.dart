@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:international_system_of_units/international_system_of_units.dart';
 
 var currentUnits = [
@@ -46,10 +45,18 @@ List numberUnits = [
   "NumberUnits.16"
 ];
 
+// List<Map<String, Object>> measures = [
+//   {"label": "Distance", "icon": Icons.directions_car},
+//   {"label": "Temp", "icon": Icons.thermostat_rounded},
+//   {"label": "Currency", "icon": Icons.euro},
+//   {"label": "Time", "icon": Icons.timer},
+//   {"label": "Number", "icon": Icons.confirmation_number},
+// ];
+
 List<Map<String, Object>> measures = [
-  {"label": "Distance", "icon": Icons.directions_car},
-  {"label": "Temp", "icon": Icons.thermostat_rounded},
-  {"label": "Currency", "icon": Icons.euro},
-  {"label": "Time", "icon": Icons.timer},
-  {"label": "Number", "icon": Icons.confirmation_number},
+  {"label": "Distance", "icon": "assets/icons/distance.png"},
+  {"label": "Temp", "icon": "assets/icons/hot.png"},
+  {"label": "Currency", "icon": "assets/icons/money.png"},
+  {"label": "Time", "icon": "assets/icons/chronometer.png"},
+  {"label": "Number", "icon": "assets/icons/binary-code.png"},
 ];

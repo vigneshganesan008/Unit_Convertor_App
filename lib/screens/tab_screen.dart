@@ -38,10 +38,15 @@ class _TabScreenState extends State<TabScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(50, 50, 50, 1),
         centerTitle: true,
-        leading: Icon(
-          Icons.calculate_rounded,
-          size: 45,
+        leading: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Image.asset(
+            'assets/icons/double-arrow.png',
+            height: 5,
+            width: 5,
+          ),
         ),
         title: screens[selectedPageIndex]["title"],
       ),
@@ -56,13 +61,14 @@ class _TabScreenState extends State<TabScreen> {
       type: BottomNavigationBarType.fixed,
       backgroundColor: Color.fromRGBO(50, 50, 50, 1),
       elevation: 5,
-      selectedItemColor: Colors.blue,
-      unselectedItemColor: Colors.tealAccent,
+      selectedFontSize: 15,
+      selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+      selectedItemColor: Colors.teal,
       currentIndex: selectedPageIndex,
       onTap: selectPage,
       items: measures
-          .map((e) =>
-              BottomNavigationBarItem(icon: Icon(e["icon"]), label: e["label"]))
+          .map((e) => BottomNavigationBarItem(
+              icon: Image.asset(e["icon"]), label: e["label"]))
           .toList(),
     );
   }

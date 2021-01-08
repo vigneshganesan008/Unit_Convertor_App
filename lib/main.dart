@@ -10,10 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        backgroundColor: Color.fromRGBO(10, 10, 10, 1),
-        appBarTheme: AppBarTheme(
-            color: Color.fromRGBO(50, 50, 50, 1),
-            actionsIconTheme: IconThemeData(color: Colors.tealAccent)),
+        backgroundColor: Colors.black,
       ),
       home: TabScreen(),
     );

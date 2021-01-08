@@ -28,18 +28,19 @@ class _CustomDropDownBoxState extends State<CustomDropDownBox> {
               side: BorderSide(
                   width: 1.0,
                   style: BorderStyle.solid,
-                  color: Colors.tealAccent),
+                  color: Colors.deepPurpleAccent),
               borderRadius: BorderRadius.all(Radius.circular(100)),
             ),
           ),
           child: Padding(
             padding: const EdgeInsets.only(left: 20, top: 7),
             child: DropdownButton(
+              isExpanded: true,
               underline: Container(),
               value: currentUnits[widget.convertorType],
-              icon: Icon(
-                Icons.arrow_downward,
-                color: Colors.yellow,
+              icon: Padding(
+                padding: const EdgeInsets.only(right: 8.0, bottom: 6),
+                child: Image.asset("assets/icons/down-arrow.png"),
               ),
               iconSize: 35,
               elevation: 20,
