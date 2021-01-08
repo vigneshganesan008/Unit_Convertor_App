@@ -5,7 +5,7 @@ import 'package:Unit_Convertor/screens/temperature_screen.dart';
 import 'package:Unit_Convertor/screens/time_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../models.dart';
+import '../models/models.dart';
 
 class TabScreen extends StatefulWidget {
   @override
