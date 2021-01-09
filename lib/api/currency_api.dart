@@ -20,6 +20,7 @@ Future<void> getCurrentExchangeRates() async {
   var response = await http.get(
       "https://v6.exchangerate-api.com/v6/581cd21b35114a45d6aede72/latest/USD");
   var allExchangeRates = json.decode(response.body)['conversion_rates'];
+  print(allExchangeRates);
   exchangeRates = [
     {"currency": "INR", "rate": allExchangeRates["INR"]},
     {"currency": "EUR", "rate": allExchangeRates["EUR"]},

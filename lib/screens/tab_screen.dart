@@ -1,3 +1,4 @@
+import 'package:Unit_Convertor/api/currency_api.dart';
 import 'package:Unit_Convertor/screens/currency_screen.dart';
 import 'package:Unit_Convertor/screens/distance_screen.dart';
 import 'package:Unit_Convertor/screens/number_screen.dart';
@@ -50,6 +51,13 @@ class _TabScreenState extends State<TabScreen> {
           ),
         ),
         title: screens[selectedPageIndex]["title"],
+        actions: selectedPageIndex == 2
+            ? [
+                IconButton(
+                    icon: Image.asset('assets/icons/refresh.png'),
+                    onPressed: getCurrentExchangeRates)
+              ]
+            : [],
       ),
       body: screens[selectedPageIndex]["screen"],
       bottomNavigationBar: buildBottomNavigationBar(),
