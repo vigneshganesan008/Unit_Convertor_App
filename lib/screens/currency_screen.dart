@@ -13,12 +13,6 @@ class CurrencyScreen extends StatefulWidget {
 class _CurrencyScreenState extends State<CurrencyScreen> {
   TextEditingController inputCur = TextEditingController(text: "0");
 
-  @override
-  void initState() {
-    getCurrentExchangeRates();
-    super.initState();
-  }
-
   List<Map<String, Object>> calculateCurrency() {
     var amt = double.tryParse(inputCur.text);
     if (amt == null) amt = 0.0;

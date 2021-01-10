@@ -25,6 +25,7 @@ class _TabScreenState extends State<TabScreen> {
       {"screen": TimeScreen(), "title": Text("Time Convertor")},
       {"screen": NumberScreen(), "title": Text("Number Convertor")},
     ];
+    getCurrentExchangeRates();
     super.initState();
   }
 
