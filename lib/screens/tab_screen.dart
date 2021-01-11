@@ -29,7 +29,7 @@ class _TabScreenState extends State<TabScreen> {
     super.initState();
   }
 
-  var selectedPageIndex = 2;
+  var selectedPageIndex = 0;
   void selectPage(int index) {
     setState(() {
       selectedPageIndex = index;
