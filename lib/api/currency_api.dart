@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:Unit_Convertor/api/api-key.dart';
 import 'package:http/http.dart' as http;
 
 List<Map<String, Object>> exchangeRates = [
@@ -17,8 +18,8 @@ List<Map<String, Object>> exchangeRates = [
 ];
 
 Future<void> getCurrentExchangeRates() async {
-  var response = await http.get(
-      "https://v6.exchangerate-api.com/v6/581cd21b35114a45d6aede72/latest/USD");
+  var response =
+      await http.get("https://v6.exchangerate-api.com/v6/$key/latest/USD");
   var allExchangeRates = json.decode(response.body)['conversion_rates'];
   print(allExchangeRates);
   exchangeRates = [
