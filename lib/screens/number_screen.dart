@@ -10,46 +10,57 @@ class NumberScreen extends StatefulWidget {
 }
 
 class _NumberScreenState extends State<NumberScreen> {
-  TextEditingController inputNumber = TextEditingController(text: "0");
+  TextEditingController inputNumber = TextEditingController(text: "0.0");
 
   List<Map<String, Object>> calculateNumber() {
-    var base = int.tryParse(currentUnits[3].toString().split(".")[1]);
-    if (inputNumber.text == "" ||
-        (base != 16 && (int.tryParse(inputNumber.text) == null))) {
+    try {
+      var base = int.tryParse(currentUnits[3].toString().split(".")[1]);
+      if (inputNumber.text == "" ||
+          (base != 16 && (int.tryParse(inputNumber.text) == null))) {
+        inputNumber.text = "0";
+      }
+      var flag = false;
+      if (base == 2) {
+        inputNumber.text.split("").forEach((element) {
+          if (element == "0" || element == "1") {
+          } else {
+            flag = true;
+          }
+        });
+      }
+      if (flag) inputNumber.text = "0";
+      return [
+        {
+          "unit": "Binary",
+          "value": int.parse(inputNumber.text, radix: base).toRadixString(2)
+        },
+        {
+          "unit": "Quinary",
+          "value": int.parse(inputNumber.text, radix: base).toRadixString(5)
+        },
+        {
+          "unit": "Octal",
+          "value": int.parse(inputNumber.text, radix: base).toRadixString(8)
+        },
+        {
+          "unit": "Decimal",
+          "value": int.parse(inputNumber.text, radix: base).toRadixString(10)
+        },
+        {
+          "unit": "Hexadecimal",
+          "value": int.parse(inputNumber.text, radix: base).toRadixString(16)
+        },
+      ];
+    } catch (Exception) {
       inputNumber.text = "0";
+      return [
+        {"unit": "Binary", "value": 0.0},
+        {"unit": "Quinary", "value": 0.0},
+        {"unit": "Octal", "value": 0.0},
+        {"unit": "Decimal", "value": 0.0},
+        {"unit": "Hexadecimal", "value": 0.0},
+      ];
     }
-    var flag = false;
-    if (base == 2) {
-      inputNumber.text.split("").forEach((element) {
-        if (element == "0" || element == "1") {
-        } else {
-          flag = true;
-        }
-      });
-    }
-    if (flag) inputNumber.text = "0";
-    return [
-      {
-        "unit": "Binary",
-        "value": int.parse(inputNumber.text, radix: base).toRadixString(2)
-      },
-      {
-        "unit": "Quinary",
-        "value": int.parse(inputNumber.text, radix: base).toRadixString(5)
-      },
-      {
-        "unit": "Octal",
-        "value": int.parse(inputNumber.text, radix: base).toRadixString(8)
-      },
-      {
-        "unit": "Decimal",
-        "value": int.parse(inputNumber.text, radix: base).toRadixString(10)
-      },
-      {
-        "unit": "Hexadecimal",
-        "value": int.parse(inputNumber.text, radix: base).toRadixString(16)
-      },
-    ];
   }
 
   @override

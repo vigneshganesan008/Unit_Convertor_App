@@ -11,10 +11,10 @@ class TimeScreen extends StatefulWidget {
 }
 
 class _TimeScreenState extends State<TimeScreen> {
-  TextEditingController inputTime = TextEditingController(text: "0");
+  TextEditingController inputTime = TextEditingController(text: "0.0");
 
   List<Map<String, Object>> calculateTime() {
-    var time = int.tryParse(inputTime.text);
+    var time = double.tryParse(inputTime.text);
 
     if (time == null) {
       time = 0;

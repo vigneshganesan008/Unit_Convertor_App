@@ -11,10 +11,10 @@ class TemperatureScreen extends StatefulWidget {
 }
 
 class _TemperatureScreenState extends State<TemperatureScreen> {
-  TextEditingController inputTemp = TextEditingController(text: "0");
+  TextEditingController inputTemp = TextEditingController(text: "0.0");
 
   List<Map<String, Object>> calculateTemp() {
-    var temp = int.tryParse(inputTemp.text);
+    var temp = double.tryParse(inputTemp.text);
 
     if (temp == null) {
       temp = 0;

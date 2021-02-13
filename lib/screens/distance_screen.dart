@@ -11,10 +11,10 @@ class DistanceScreen extends StatefulWidget {
 }
 
 class _DistanceScreenState extends State<DistanceScreen> {
-  TextEditingController inputDistance = TextEditingController(text: "0");
+  TextEditingController inputDistance = TextEditingController(text: "0.0");
 
   List<Map<String, Object>> calculateDistance() {
-    var distance = int.tryParse(inputDistance.text);
+    var distance = double.tryParse(inputDistance.text);
 
     if (distance == null) {
       distance = 0;
